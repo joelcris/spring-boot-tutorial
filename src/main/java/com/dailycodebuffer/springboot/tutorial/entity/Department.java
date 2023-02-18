@@ -12,6 +12,9 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long departmentId;
     private String departmentName;
+    private String departmentAddress;
+    private String departmentCode;
+
 
     public Long getDepartmentId() {
         return departmentId;
@@ -44,9 +47,6 @@ public class Department {
     public void setDepartmentCode(String departmentCode) {
         this.departmentCode = departmentCode;
     }
-
-    private String departmentAddress;
-    private String departmentCode;
 
     public Department(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
         this.departmentId = departmentId;
