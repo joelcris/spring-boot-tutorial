@@ -14,7 +14,15 @@ public class Department {
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;
+    public Department() {
+    }
 
+    public Department(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
+        this.departmentId = departmentId;
+        this.departmentName = departmentName;
+        this.departmentAddress = departmentAddress;
+        this.departmentCode = departmentCode;
+    }
 
     public Long getDepartmentId() {
         return departmentId;
@@ -46,16 +54,6 @@ public class Department {
 
     public void setDepartmentCode(String departmentCode) {
         this.departmentCode = departmentCode;
-    }
-
-    public Department(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
-        this.departmentId = departmentId;
-        this.departmentName = departmentName;
-        this.departmentAddress = departmentAddress;
-        this.departmentCode = departmentCode;
-    }
-
-    public Department() {
     }
 
     @Override
