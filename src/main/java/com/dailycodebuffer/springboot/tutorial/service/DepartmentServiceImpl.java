@@ -61,4 +61,10 @@ public class DepartmentServiceImpl implements DepartmentService{
         return departmentRepository.save(departmentRecordInDb);
     }
 
+    @Override
+    public Department fetchDepartmentByName(String departmentName) {
+        //TODO handle not unique results: javax.persistence.NonUniqueResultException: query did not return a unique result: 2
+        return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
+    }
+
 }
