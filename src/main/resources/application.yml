@@ -1,6 +1,8 @@
 server:
   port: 8082
 
+#Setting the property as a JVM system property:
+  #java -jar myapp.jar -Dspring.profiles.active=dev
 spring:
   profiles:
     active: dev
