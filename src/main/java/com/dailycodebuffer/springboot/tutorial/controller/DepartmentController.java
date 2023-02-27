@@ -15,6 +15,7 @@ import java.util.List;
 public class DepartmentController {
 
     @Autowired
+    //@Qualifier("myService1") //in case if having more than one implementation of the service interface, specify it.
     private DepartmentService departmentService;
 
     private final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
