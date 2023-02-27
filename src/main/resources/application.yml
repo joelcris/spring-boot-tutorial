@@ -1,8 +1,16 @@
 server:
   port: 8082
+
+spring:
+  profiles:
+    active: dev
+
+---
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/dcbapp
+    #Must be deleted upon deploy, prefer .env file
     username: root
     password: password
     driver-class-name: com.mysql.jdbc.Driver
@@ -13,5 +21,50 @@ spring:
   h2:
     console:
       enabled: false
+  config:
+    activate:
+      on-profile: dev
 welcome:
-  message: Welcome to Spring Boot tutorial!!
+  message: Welcome to Spring Boot tutorial dev!!
+
+
+---
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dcbapp-qa
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: false
+  config:
+    activate:
+      on-profile: qa
+welcome:
+  message: Welcome to Spring Boot tutorial qa!!
+
+---
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dcbapp-prod
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: false
+  config:
+    activate:
+      on-profile: prod
+welcome:
+  message: Welcome to Spring Boot tutorial prod!!
